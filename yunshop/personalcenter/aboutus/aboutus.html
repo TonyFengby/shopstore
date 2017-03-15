@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=2.0,maximum-scale=1">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../css/style.css">
+		<script src="../../js/jquery-3.1.1.js"></script>
+		<script src="../../js/jquery.touchSwipe.min.js"></script>
+		<script src="../../js/js.js"></script>
+		<script src="../../js/vue.js"></script>
+	</head>
+	<body >
+		<div class="index">
+			<div class="nav-topbox">
+				<div class="nav-top">
+					<a href="../centerindex/personalcenter.html"><img src="../../img/help-1.png"  class="left" style="width:0.55rem ;height: 0.95rem;"></a>
+					<p>关于我们</p>
+				</div>
+			</div>
+			
+			<div class="aboutus">
+				<div class="list">
+					<span class="fullleft">版本号</span>
+					<span class="fullright colorgray">V.1.0.0</span>
+				</div>
+				<div class="list">
+					<span class="fullleft">官方网站</span>
+					<span class="fullright colorgray">www.hemikeji.com</span>
+				</div>
+				<div class="list">
+					<span class="fullleft">微信公众号</span>
+					<span class="fullright colorgray">禾米寻宝</span>
+				</div>
+				<div class="list">
+					<span class="fullleft">客服中心</span>
+					<span class="fullright colorgray">0571-88888888</span>
+				</div>
+				<a href="proposal.html"><div class="list">
+					<span class="fullleft">意见反馈</span>
+						<img src='../../img/personalcenter-4.png' class="fullright">
+				</div></a>
+			</div>
+		</div>
+	</body>
+	
+</html>
+<script>
+		
+		
+			$(window).ready(function(){
+				changerem()
+			})
+			changerem()
+			$(window).resize(function(){
+				changerem()
+				
+			})
+		$(".signbtn").click(function(){
+			$(".sign").css("display","block")
+		})
+		$(".sign").click(function(){
+			$(".sign").css("display","none");
+		})
+		
+		
+		
+		</script>

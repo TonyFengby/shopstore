@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/style.css">
+
+		<script src="../js/jquery-3.1.1.min.js"></script>
+		<script src="../js/changerem.js" type="text/javascript" charset="utf-8"></script>
+		<meta name="viewport" content="width=device-width,initial-scale=2.0,maximum-scale=1">
+	</head>
+
+	<body style="background: #f0f0f0;">
+		<div class="index">
+			<div class="nav-topbox">
+				<div class="nav-top">
+					<a href="commissiondetails.html"><img src="../img/help-1.png"  class="left" style="width:0.55rem ;height: 0.95rem;"></a>
+					<p>他的个人中心</p>
+				</div>
+			</div>
+			<div class="his_main ">
+				<img src="../img/his_1.png " alt=" " class="discover_main_img1 "/>
+				<div class="discover_main_p ">
+				<p class="discover_p1 ">宗哥哥恭喜发财</p>
+				<p class="his_p2 ">ID:168888668</p>				
+				</div>
+			</div>
+				<div class="his_main1 ">
+					<div class="his_a ">
+						<span id="yun">云购记录</span>
+						<span id="jiang">中奖记录</span>
+					</div>
+					<div class="yun">
+						
+					
+					<div class="his_main2 ">
+						<img src="../img/his_2.png " alt=" " />
+						<div>
+						<div class="his_main3 ">
+						<div class="his_list ">
+						<p class="phone_ipad_main_title ">Apple iPhone6s 16g颜.</p>
+						<p class="phone_ipad_main_loading ">揭晓进度78%</p>
+						<p class="phone_ipad_main_loadingimg " style="margin-left: 0.5rem; "><img src="../img/loading.png "/></p>
+						<p class="phone_ipad_main_last "><span>总需9280人次</span>    <span>剩余<span style="color: #00a0e9; ">306</span>人次</span></p>
+						</div>
+						<div class="his_add "><a href=" ">追加</a></div>
+						</div>
+						<div class="his_color ">
+							1
+						</div>
+						</div>
+					</div>
+					<div class="his_main4 ">
+						<img src="../img/his_3.png " alt=" " />
+						<div class="his_main4_1 ">
+							<p><span>获奖者：</span><span class="his_blue ">宗哥恭喜发..</span></p>
+							<p>获奖商品：<span class="his_blue ">Apple iPhone6s Plus ...</span></p>
+							<p>参与期号：</span>32204567</p>
+							<p>幸运号码：<span class="his_red ">100000387</span></p>
+							<p>揭晓时间：揭晓时间：2016-03-24 13:04:00</p>
+							<div class="his_main4_55 "><span>55</span>人次</div>
+							<img src="../img/his_4.png " alt=" "  class="his_img4 "/>
+						</div>
+					</div>
+					<div class="his_main5 ">
+						<img src="../img/his_3.png " alt=" " />
+						<div class="his_main5_1 ">
+							<p class="his_main5_1_title ">Apple iPhone6s Plus 64G 颜色随机</p>
+							<p class="his_main5_1_time ">参与期号：<span>303291670</span></p>
+						</div>
+						<div class="his_main5_tt ">
+						<p><img src="../img/loading_time.png " alt=" " />即将揭晓</p>
+						<span class="_h ">00</span><span class="loading_main_left_m ">:</span>
+        				<span class="_m ">00</span><span class="loading_main_left_m ">:</span>
+       					<span class="_s ">00</span> 
+					</div>
+					</div>
+					</div>
+					<div class="his_main6 ">
+						<img src="../img/his_3.png "/>
+						<div class="his_main6_1 ">
+							<p class="his_main6_1_p1 ">苹果Apple iPad Pro 9.7 英寸 32GB</p>
+							<p class="his_main6_1_p2 ">商品总需：<span class="his_red ">4988</span>人次</p>
+							<p class="his_main6_1_p2">参与期号：303291670</p>
+							<p class="his_main6_1_p2">参与次数：<span class=" his_red ">55</span>人次</p>
+							<p class="his_main6_1_p2">幸运号码：<span class="his_red">100000387</span></p>
+							<p class="his_main6_1_p2">揭晓时间：2016-03-24 13:04:00</p>
+						</div>
+					</div>
+					<!--<div class=" his_color1 ">
+							1
+						</div>-->
+					</div>
+				
+			
+		</div>
+	</body>
+	<script type="text/javascript ">  
+	
+	function countTime1(){
+		
+		var len =document.getElementsByClassName("_h ").length;
+		for (var i=0; i<len;i++ ) {
+			countTime("_h ","_m ","_s ",i);
+		}
+	}
+	countTime1();
+	setInterval(countTime1,1000);  
+    function countTime(a,b,c,d) {  
+            //获取当前时间  
+            var _a=a,_b=b,_c=c,_d=d;
+            var date = new Date();  
+            var now = date.getTime();  
+            //设置截止时间  
+            var endDate = new Date("2017-6-22 8:43:23 ");  
+            var end = endDate.getTime();  
+            //时间差  
+            var leftTime = end-now;  
+            //定义变量 d,h,m,s保存倒计时的时间  
+          
+            var h,m,s;  
+            if (leftTime>=0) {   
+                h = Math.floor(leftTime/1000/60/60%24);  
+                m = Math.floor(leftTime/1000/60%60);  
+                s = Math.floor(leftTime/1000%60);                     
+            }  
+            //将倒计时赋值到div中  
+   			if(h<10){
+   				document.getElementsByClassName(_a)[_d].innerHTML="0 "+h
+   			}else{
+   				document.getElementsByClassName(_a)[_d].innerHTML = h; 
+   			}
+//          document.getElementsByClassName(_a)[_d].innerHTML = h; 
+			if(m<10){
+				 document.getElementsByClassName(_b)[_d].innerHTML ="0 "+m
+			}else{
+				 document.getElementsByClassName(_b)[_d].innerHTML = m; 
+			}
+            if(s<10){
+            	document.getElementsByClassName(_c)[_d].innerHTML ="0 "+s
+            }else{
+            document.getElementsByClassName(_c)[_d].innerHTML = s;}
+            //  递归每秒调用countTime方法，显示动态时间效果  
+            
+  
+        }  
+               
+    </script>  
+        
+      <script type="text/javascript">
+      	
+     
+        
+        $(function(){
+         $("#jiang").click(function(){
+        	$(".yun").hide();
+        	$(".his_main6").show();
+        	$("#yun").css("border-bottom","none");
+        	$("#yun").css("color","#666");
+        	$("#jiang").css("border-bottom","3px solid #f2473d");
+        	$("#jiang").css("color","#f2473d")
+        	
+ 		})
+         
+         $("#yun").click(function(){
+         	$(".yun").show()
+        	$(".his_main6").hide()
+         	$("#jiang").css("border-bottom","none");
+        	$("#jiang").css("color","#666");
+        	$("#yun").css("border-bottom","3px solid #f2473d");
+        	$("#yun").css("color","#f2473d")
+         	
+         })
+         
+        
+     })
+     	
+         </script>  
+    
+        
+        
+        
+        
+        
+        
+ 
+</html>

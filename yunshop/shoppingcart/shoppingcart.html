@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=2.0,maximum-scale=1">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/style.css">
+		<script src="../js/jquery-3.1.1.js"></script>
+		<script src="../js/jquery.touchSwipe.min.js"></script>
+		<script src="../js/js.js"></script>
+		<script src="../js/vue.js"></script>
+	</head>
+	<body >
+		<div class="index shoppingcartbox">
+			<div class="nav-topbox">
+				<div class="nav-top">
+					<p>购物车</p>
+				</div>
+			</div>
+			<div class="nav-bottombox">
+				<div class="nav-bottom">
+					<div class="cartbottom" v-if="arr[0]">
+						<div class="cartset allset cartsetactive" v-on:click="allset">
+						</div>
+						<span>全选</span>
+						<span class="countstyle">合计:</span>
+						<span class="count">￥<span class="first" >{{count}}.</span><span class="last">00</span></span>
+						<div class="settlement btn">结算(<span>{{arr.length}}</span>)</div>
+						<div class="del btn">删除</div>
+					</div>
+					<a href="../index.html" >
+						<div class="bottomstyle">
+							<img src="../img/navbottom-1-2.png">
+							<p>首页</p>
+						</div>
+					</a>
+					<a href="../loading/loading.html">
+						<div class="bottomstyle">
+							<img src="../img/navbottom-2.png">
+							<p>即将揭晓</p>
+						</div>
+					</a>
+					<a href="../discover/discover2.html">
+						<div class="bottomstyle">
+							<img src="../img/navbottom-3.png">
+							<p>表现</p>
+						</div>
+					</a>
+					<a href="shoppingcart.html" class="active">
+						<div class="bottomstyle">
+							<img src="../img/navbottom-4-2.png">
+							<p>购物车<span class="shoping">0</span></p>
+						</div>
+					</a>
+					<a href="../personalcenter/centerindex/personalcenter.html">
+						<div class="bottomstyle">
+							<img src="../img/navbottom-5.png">
+							<p>个人中心</p>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="shopingcart">
+				<div class="cartstyle" v-for="(arrs,index) in arr">
+					<div class="cartset singleset cartsetactive" v-on:click="singleset(index)"></div>
+					<img v-bind:src="arrs.img">
+					<div class="msgbox">
+						<div class="top">
+							{{arrs.title}}
+						</div>
+						<div class="mian">
+							<div class="left">
+								<div class="reduce" v-on:click="reduce(index)">-</div>
+								<div class="num">{{arrs.num}}</div>
+								<div class="add" v-on:click="add(index)">+</div>
+							</div>
+							<div class="right">扫单</div>
+						</div>
+						<div class="bottom">
+							<div class="bottomleft">总需<span>{{arrs.num2}}</span>人次</div>
+							<div class="bottomright">剩余<span>{{arrs.num3}}</span>人次</div>
+						</div>
+					</div>
+				</div>
+				<div class="cartempty" v-if="!arr[0]">
+					<img src="../img/shoppingcart-2.png">
+					<div class="text1">
+						<p>购物车空空如也</p>
+						<p>现在去挑几件吧</p>
+					</div>
+					<a href="#"><div class="btn">立即寻宝</div></a>
+				</div>
+				<div class="emptymsg">
+					你还没有选择商品哦
+				</div>
+			</div>
+		</div>
+	</body>
+	
+</html>
+<script>
+		
+		var vm=new Vue({
+		el:".index",
+		data:{
+			arr:[
+			{img:"../img/shoppingcart-1.jpg",title:"Apple iPhone6s 32G 颜色随机",num:1,num2:9280,num3:306,choice:true},
+			{img:"../img/shoppingcart-1.jpg",title:"Apple iPhone6s 64G 颜色随机",num:1,num2:2324,num3:112,choice:true},
+			{img:"../img/shoppingcart-1.jpg",title:"Apple iPhone6s 64G 颜色随机",num:1,num2:2324,num3:112,choice:true}
+			],
+			count:3
+		},
+		methods:{
+			add:function(index){
+				vm.arr[index].num++;
+				cartcount()
+			},
+			reduce:function(index){
+				if(vm.arr[index].num>1){
+				vm.arr[index].num--;
+				}else{
+					vm.arr.splice(index, 1);
+				}
+				cartcount();
+				var n=0;
+				for(var i=0;i<vm.arr.length;i++){
+					if(vm.arr[i].choice==false){
+						n++;
+					}
+				};
+				if(n==0){
+					$(".allset").addClass("cartsetactive");
+				}
+			},
+			allset:function(index){
+				if($(event.target).css("background-color")!="rgb(242, 71, 61)"){
+				$(".cartset").addClass("cartsetactive");
+				for(var i=0;i<vm.arr.length;i++){
+					vm.arr[i].choice=true;
+				}
+				}else{
+				$(".cartset").removeClass("cartsetactive")	;
+				for(var i=0;i<vm.arr.length;i++){
+					vm.arr[i].choice=false;
+				};
+				}
+				cartcount()
+			},
+			singleset:function(index){
+				if($(event.target).css("background-color")!="rgb(242, 71, 61)"){
+				$(event.target).addClass("cartsetactive");
+				vm.arr[index].choice=true;
+				}else{
+				$(event.target).removeClass("cartsetactive");
+				vm.arr[index].choice=false;
+				}
+				$(".allset").removeClass("cartsetactive");
+				cartcount()
+			}
+		}
+	})
+		
+		$(".del").click( function(){
+			var k=0;
+			for(var i=0;i<$(".singleset").length;i++){
+				if($(".singleset").eq(i).css("background-color")=="rgb(242, 71, 61)"){
+					vm.arr.splice(i-k,1);
+					k++;
+				}
+			}
+			if(k==0){
+				$(".emptymsg").stop().css("opacity","100").delay(1000).animate({"opacity":"0"},1000)
+			}
+			cartcount()
+		})
+		
+		
+		
+		
+		
+		cartcount()
+		
+		setInterval(bannermove2,2000) 
+		movelist()
+		bannermove(".index-banner",3,2000)
+			$(window).ready(function(){
+				changerem()
+			})
+			changerem()
+			$(window).resize(function(){
+				changerem()
+				
+			})
+		$(".signbtn").click(function(){
+			$(".sign").css("display","block")
+		})
+		$(".sign").click(function(){
+			$(".sign").css("display","none");
+		})
+		$(window).scroll(function(){
+			var height=$(".index-banner").height()+$(".index-midclass").height()+$(".index-banner2").height()
+			if($(window).scrollTop()>height){
+				$(".nav-topbox").css("display","none");
+				$(".listnav").addClass("listactive");
+				changerem()
+			}else{
+				$(".nav-topbox").css("display","block");
+				$(".listnav").removeClass("listactive");
+			}
+		})
+		
+		
+		</script>

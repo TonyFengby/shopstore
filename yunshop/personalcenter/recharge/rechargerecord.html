@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=2.0,maximum-scale=1">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../css/style.css">
+		<script src="../../js/jquery-3.1.1.js"></script>
+		<script src="../../js/jquery.touchSwipe.min.js"></script>
+		<script src="../../js/js.js"></script>
+		<script src="../../js/vue.js"></script> 
+	</head>
+	<body>
+		
+		<div class="index">
+			<div class="nav-topbox">
+				<div class="nav-top">
+					<a href="#"><img src="../../img/help-1.png"  class="left" style="width:0.55rem ;height: 0.95rem;"></a>
+					<p>充值记录</p>
+					
+				</div>
+			</div>
+			<div class="rechargerecord">
+				
+				<div class="style" v-for="arrs in arr">
+					<p>支付方式:<span>{{arrs.payway}}</span></p>
+					<p>支付时间:<span>{{arrs.time}}</span></p>
+					<p>支付金额:<span class="colorred">{{arrs.num}}</span></p>
+					<p>支付状态:<span class="colorred">{{arrs.state}}</span></p>
+				</div>
+			</div>
+			
+		</div>
+	</body>
+	
+</html>
+<script>
+	
+			
+			var vm=new Vue({
+		el:".index",
+		data:{
+			arr:[
+			{time:"2016-03-24 10:28:36",payway:"支付宝支付",state:"支付成功",num:"￥55.00"},
+			{time:"2016-03-24 10:28:36",payway:"支付宝支付",state:"支付失败",num:"￥55.00"},
+			{time:"2016-03-24 10:28:36",payway:"支付宝支付",state:"支付成功",num:"￥55.00"},
+			]
+		}
+		})
+
+		
+			
+			$(window).ready(function(){
+				changerem()
+			})
+			changerem()
+			$(window).resize(function(){
+				changerem()
+			})
+		
+		
+		
+		</script>

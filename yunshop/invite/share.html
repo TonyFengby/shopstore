@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<script src="../js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/changerem.js" type="text/javascript" charset="utf-8"></script>
+		<title></title>
+	</head>
+
+	<body>
+		<div class="index">
+			<div class="nav-topbox">
+				<div class="nav-top">
+					<a href="commissiondetails.html"><img src="../img/help-1.png"  class="left" style="width:0.55rem ;height: 0.95rem;"></a>
+					<p>邀请返佣金</p>
+				</div>
+			</div>
+			<div class="invite_main">
+				<div class="invite_main_pic" id="banner">
+						<img src="../img/invite_banner1.jpg" />
+						<img src="../img/invitre_banner.jpg" />
+						<img src="../img/invite_banner1.jpg" />
+						<img src="../img/invitre_banner.jpg" />
+				</div>
+				<div class="invite_main_btn">
+					立即邀请
+				</div>
+			
+			<div class="invite_main_outbox">
+				</div>
+				<div accesskey="invite_main_chare">
+					<div class="invite_main_chare1">
+						<p>分享到</p>
+						<div class="invite_main_chare1_1">
+							<img src="../img/wechat.png"/>
+							<p>微信好友</p>
+						</div>
+						<div class="invite_main_chare1_1">
+							<img src="../img/quan.png"/>
+							<p>微信好友</p>
+						</div>
+						<div class="invite_main_chare1_1">
+							<img src="../img/qq.png"/>
+							<p style="margin-top: -0.25rem;">QQ好友</p>
+						</div>
+						<div class="invite_main_chare1_1">
+							<img src="../img/kongjian.png"/>
+							<p  style="margin-top: -0.04rem;">QQ空间</p>
+						</div>
+						<div class="invite_main_chare1_11">
+							<img src="../img/copy_.png"/>
+							<p  style="margin-top: -0.04rem;">复制链接</p>
+						</div>
+					</div>
+					<div class="invite_main_chare2">
+						取消
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+			var i = 0;
+		$(function(){
+			setInterval(function move(){
+				i++;
+				i=i>3?0:i;
+				$("#banner>img").eq(i).fadeIn().siblings("img").fadeOut();
+			},2000)
+
+		})
+		
+	</script>
+</html>

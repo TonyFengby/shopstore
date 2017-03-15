@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=2.0,maximum-scale=1">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../css/style.css">
+		<script src="../../js/jquery-3.1.1.js"></script>
+		<script src="../../js/jquery.touchSwipe.min.js"></script>
+		<script src="../../js/js.js"></script>
+		<script src="../../js/vue.js"></script>
+	</head>
+	<body >
+		<div class="index personalcenterbox">
+			<div class="nav-topbox">
+				<div class="nav-top">
+					<a href="#">
+						<div class="msgright">
+							<img src="../../img/personalcenter-1.png" style="width: 0.925rem;height: 1.05rem;">
+							<div class="msgnum">
+								0
+							</div>
+						</div>
+					</a>
+					<p>个人中心</p>
+				</div>
+			</div>
+			<div class="nav-bottombox">
+				<div class="nav-bottom">
+					
+					<a href="../../index.html" >
+						<div class="bottomstyle">
+							<img src="../../img/navbottom-1-2.png">
+							<p>首页</p>
+						</div>
+					</a>
+					<a href="../../loading/loading.html">
+						<div class="bottomstyle">
+							<img src="../../img/navbottom-2.png">
+							<p>即将揭晓</p>
+						</div>
+					</a>
+					<a href="../../discover/discover2.html">
+						<div class="bottomstyle">
+							<img src="../../img/navbottom-3.png">
+							<p>表现</p>
+						</div>
+					</a>
+					<a href="../../shoppingcart/shoppingcart.html">
+						<div class="bottomstyle">
+							<img src="../../img/navbottom-4.png">
+							<p>购物车<span class="shoping">0</span></p>
+						</div>
+					</a>
+					<a href="#" class="active">
+						<div class="bottomstyle">
+							<img src="../../img/navbottom-5.png">
+							<p>个人中心</p>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="personalcenter">
+				<div class="listone">
+					<img src="../../img/personalcenter-1.jpg">
+					<div class="right">
+						<img src="../../img/personalcenter-2.png">
+						<p class="name">日不落帝国</p>
+						<p class="invitationcode">邀请码:168888668</p>
+					</div>
+				</div>
+				<div class="listtwo">
+					<a href="#">
+						<div class="liststyle">
+							<img src="../../img/personalcenter-3.png">
+							<span class="title">我的钱包</span>
+							<span class="other">余额:<span>888888.00</span></span>
+							<img src="../../img/personalcenter-4.png" class="right">
+						</div>
+					</a>
+					<a href="#">
+						<div class="liststyle">
+							<img src="../../img/personalcenter-5.png">
+							<span class="title">我的积分</span>
+							<span class="other">余额:<span>0.00</span></span>
+							<img src="../../img/personalcenter-4.png" class="right">
+						</div>
+					</a>
+					<a href="#">
+						<div class="liststyle">
+							<img src="../../img/personalcenter-6.png">
+							<span class="title">充值记录</span>
+							<img src="../../img/personalcenter-4.png" class="right">
+						</div>
+					</a>
+				</div>
+				<div class="listtwo">
+					<a href="#">
+						<div class="liststyle">
+							<img src="../../img/personalcenter-7.png">
+							<span class="title">云购记录</span>
+							<img src="../../img/personalcenter-4.png" class="right">
+						</div>
+					</a>
+					<a href="#">
+						<div class="liststyle">
+							<img src="../../img/personalcenter-8.png">
+							<span class="title">中奖记录</span>
+							<img src="../../img/personalcenter-4.png" class="right">
+						</div>
+					</a>
+					<a href="#">
+						<div class="liststyle">
+							<img src="../../img/personalcenter-9.png">
+							<span class="title">我的红包</span>
+							<img src="../../img/personalcenter-4.png" class="right">
+						</div>
+					</a>
+					<a href="#">
+						<div class="liststyle">
+							<img src="../../img/personalcenter-10.png">
+							<span class="title">我的晒单</span>
+							<img src="../../img/personalcenter-4.png" class="right">
+						</div>
+					</a>
+				</div>
+				<div class="listtwo">
+					<a href="#">
+						<div class="liststyle">
+							<img src="../../img/personalcenter-11.png">
+							<span class="title">个人设置</span>
+							<img src="../../img/personalcenter-4.png" class="right">
+						</div>
+					</a>
+					<a href="#">
+						<div class="liststyle">
+							<img src="../../img/personalcenter-12.png">
+							<span class="title">关于我们</span>
+							<img src="../../img/personalcenter-4.png" class="right">
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</body>
+	
+</html>
+<script>
+		
+		
+			$(window).ready(function(){
+				changerem()
+			})
+			changerem()
+			$(window).resize(function(){
+				changerem()
+				
+			})
+		$(".signbtn").click(function(){
+			$(".sign").css("display","block")
+		})
+		$(".sign").click(function(){
+			$(".sign").css("display","none");
+		})
+		
+		
+		
+		</script>

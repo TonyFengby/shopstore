@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=2.0,maximum-scale=1">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../css/style.css">
+		<script src="../../js/jquery-3.1.1.js"></script>
+		<script src="../../js/jquery.touchSwipe.min.js"></script>
+		<script src="../../js/js.js"></script>
+		<script src="../../js/vue.js"></script>
+	</head>
+	<body>
+		
+		<div class="index commissiondetailsbox">
+			<div class="nav-topbox">
+				<div class="nav-top">
+					<a href="../centerindex/personalcenter.html"><img src="../../img/help-1.png"  class="left" style="width:0.55rem ;height: 0.95rem;"></a>
+					<p>云购记录</p>
+				</div>
+			</div>
+			<div class="commissiondetails cloudrecord">
+				<div class="listnav">
+					<div class="navstyle">
+						<p class="active">全部</p>
+					</div>
+					<div class="navstyle">
+						<p>进行中</p>
+					</div>
+					<div class="navstyle">
+						<p>已揭晓</p>
+					</div>
+				</div>
+				<div class="listmain">
+					<div class="listmainin">
+						<div class="mianstyle one">
+							<div class="style" v-for="arrs in arr">
+								<img class="left" v-bind:src="arrs.src"></img>
+								<div class="right">
+									<p>商品名称:<span class="colorblue">{{arrs.name}}</span></p>
+									<p>期&nbsp;&nbsp;号:<span>{{arrs.num1}}</span></p>
+									<p>本期参与:<span class="colorred">{{arrs.num2}}</span><span class="colorgray">人次</span></p>
+									<p v-if="arrs.state==2||arrs.state==1">获 奖 者:<span class="colorblue">{{arrs.name2}}</span></p>
+									<p v-if="arrs.state==2||arrs.state==1">幸运号码:<span class="colorred">{{arrs.num3}}</span></p>
+									<p v-if="arrs.state==2||arrs.state==1">揭晓时间:<span class="colorgray">{{arrs.time}}</span></p>
+									<div class="three colorred" v-if="arrs.state==3">
+										<img src="../../img/cloudrecord-1.png"><span>即将揭晓</span>
+										<p>15:20:34</p>
+									</div>
+									<a href="../winningrecord/receiveprizes.html" v-if="arrs.state==1"><div class="state one">
+										去领奖
+									</div></a>
+									<a href="../winningrecord/logisticsinformation.html" v-if="arrs.state==2"><div class="state two">
+										查看物流
+									</div></a>
+									<a href="clouddetail.html"><div class="detail">
+										查看详情
+									</div></a>
+								</div>
+							</div>
+						</div>
+						<div class="mianstyle two">
+							<ul><p>ID</p>
+								<li>123456</li>
+							</ul>
+							<ul><p>注册时间</p>
+								<li>2016-07-15</li>
+							</ul>
+							<ul><p>佣金(元)</p>
+								<li class="colorred">+5.00</li>
+							</ul>
+						</div>
+						<div class="mianstyle three">
+							<ul><p>时间</p>
+								<li>2016-07-15</li>
+							</ul>
+							<ul><p>金额</p>
+								<li class="colorred">+10.00</li>
+							</ul>
+							<ul><p>结余</p>
+								<li class="colorred">+5.00</li>
+							</ul>
+						</div>
+					</div>
+					<div class="clearboth"></div>
+				</div>
+			</div>
+			
+		</div>
+	</body>
+	
+</html>
+<script>
+
+			var vm=new Vue({
+		el:".index",
+		data:{
+			arr:[
+			{src:"../../img/indexlist-1.jpg",name:"Apple iPhone6s 16g",name2:"心碎乌托邦",time:"2016-07-15",num1:"121253",num2:"55",num3:"10000852",state:3},
+			{src:"../../img/indexlist-1.jpg",name:"Apple iPhone6s 16g",name2:"心碎乌托邦",time:"2016-07-15",num1:"121253",num2:"55",num3:"10000852",state:1},
+			{src:"../../img/indexlist-1.jpg",name:"Apple iPhone6s 16g",name2:"心碎乌托邦",time:"2016-07-15",num1:"121253",num2:"55",num3:"10000852",state:2},
+			{src:"../../img/indexlist-1.jpg",name:"Apple iPhone6s 16g",name2:"心碎乌托邦",time:"2016-07-15",num1:"121253",num2:"55",num3:"10000852",state:1},
+			{src:"../../img/indexlist-1.jpg",name:"Apple iPhone6s 16g",name2:"心碎乌托邦",time:"2016-07-15",num1:"121253",num2:"55",num3:"10000852",state:2},
+			{src:"../../img/indexlist-1.jpg",name:"Apple iPhone6s 16g",name2:"心碎乌托邦",time:"2016-07-15",num1:"121253",num2:"55",num3:"10000852",state:1},
+			{src:"../../img/indexlist-1.jpg",name:"Apple iPhone6s 16g",name2:"心碎乌托邦",time:"2016-07-15",num1:"121253",num2:"55",num3:"10000852",state:1}
+			]
+		}
+		})
+
+
+			movelist()
+		
+			$(window).ready(function(){
+				changerem()
+			})
+			changerem()
+			$(window).resize(function(){
+				changerem()
+			})
+		
+		
+		
+		</script>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=2.0,maximum-scale=1">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../css/style.css">
+		<script src="../../js/jquery-3.1.1.js"></script>
+		<script src="../../js/jquery.touchSwipe.min.js"></script>
+		<script src="../../js/js.js"></script>
+		<script src="../../js/vue.js"></script>
+	</head>
+	<body>
+		
+		<div class="index commissiondetailsbox">
+			<div class="nav-topbox">
+				<div class="nav-top">
+					<a href="commissiondetails.html"><img src="../../img/help-1.png"  class="left" style="width:0.55rem ;height: 0.95rem;"></a>
+					<p>提现明细</p>
+				</div>
+			</div>
+			<div class="commissiondetails withdrawalsdetails">
+				<div class="listmain" v-if="arr[0]">
+					<div class="listmainin">
+						<div class="mianstyle one">
+							<ul><p>时间</p>
+								<li v-for="arrs in arr">{{arrs.time}}</li>
+							</ul>
+							<ul><p>提现金额</p>
+								<li v-for="arrs in arr">{{arrs.cash1}}</li>
+							</ul>
+							<ul><p>费率</p>
+								<li v-for="arrs in arr">{{arrs.rate}}</li>
+							</ul>
+							<ul><p>到账金额</p>
+								<li v-for="arrs in arr" class="colorred">{{arrs.cash2}}</li>
+							</ul>
+						</div>
+					</div>
+					<div class="clearboth"></div>
+				</div>
+				<div class="listmain2" v-if="!arr[0]">
+					<img src="../../img/withdrawalsdetails-1.png">
+					<p>暂无提现信息</p>
+				</div>
+			</div>
+			
+		</div>
+	</body>
+	
+</html>
+<script>
+			var vm=new Vue({
+		el:".index",
+		data:{
+			arr:[
+//			{time:"2016-07-15",cash1:"-100.00",rate:"0.60",cash2:"99.00"},
+//			{time:"2016-07-15",cash1:"-100.00",rate:"0.60",cash2:"99.00"},
+//			{time:"2016-07-15",cash1:"-100.00",rate:"0.60",cash2:"99.00"},
+//			{time:"2016-07-15",cash1:"-100.00",rate:"0.60",cash2:"99.00"},
+//			{time:"2016-07-15",cash1:"-100.00",rate:"0.60",cash2:"99.00"},
+//			{time:"2016-07-15",cash1:"-100.00",rate:"0.60",cash2:"99.00"},
+//			{time:"2016-07-15",cash1:"-100.00",rate:"0.60",cash2:"99.00"},
+//			{time:"2016-07-15",cash1:"-100.00",rate:"0.60",cash2:"99.00"},
+//			{time:"2016-07-15",cash1:"-100.00",rate:"0.60",cash2:"99.00"},
+//			{time:"2016-07-15",cash1:"-100.00",rate:"0.60",cash2:"99.00"},
+//			{time:"2016-07-15",cash1:"-100.00",rate:"0.60",cash2:"99.00"},
+//			{time:"2016-07-15",cash1:"-100.00",rate:"0.60",cash2:"99.00"}
+			]
+		}
+		})
+			
+			movelist()
+		
+			$(window).ready(function(){
+				changerem()
+			})
+			changerem()
+			$(window).resize(function(){
+				changerem()
+			})
+		
+		
+		
+		</script>

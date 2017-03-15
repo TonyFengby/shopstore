@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=2.0,maximum-scale=1">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../css/style.css">
+		<script src="../../js/jquery-3.1.1.js"></script>
+		<script src="../../js/jquery.touchSwipe.min.js"></script>
+		<script src="../../js/js.js"></script>
+	</head>
+	<body>
+		
+		<div class="index">
+			<div class="nav-topbox">
+				<div class="nav-top">
+					<a href="mywallet.html"><img src="../../img/help-1.png"  class="left" style="width:0.55rem ;height: 0.95rem;"></a>
+					<p>充值</p>
+				</div>
+			</div>
+			<div class="recharge">
+				<div class="rechargenum">
+					<p class="title">选择充值金额</p>
+					<div class="mian">
+						<div class="style active">
+							10元
+							<div></div>
+						</div>
+						<div class="style">
+							20元
+							<div></div>
+						</div>
+						<div class="style">
+							50元
+							<div></div>
+						</div>
+						<div class="style">
+							100元
+							<div></div>
+						</div>
+						<div class="style">
+							200元
+							<div></div>
+						</div>
+						<div class="style" style="color: #ccc;">
+							其他金额
+							<div></div>
+						</div>
+					</div>
+				</div>
+				<div class="playway">
+					<div class="style">
+						选择支付方式
+					</div>
+					<div class="style">
+						<img src="../../img/recharge-1.png"> 支付宝支付<input type="radio" name="palyway">
+					</div>
+					<div class="style">
+						<img src="../../img/recharge-2.png"> 微信支付<input type="radio" name="palyway">
+					</div>
+					<div class="style">
+						<img src="../../img/recharge-3.png"> 银联支付<input type="radio" name="palyway">
+					</div>
+				</div>
+				<a href='mywalletsuccess.html'><button>确认支付</button></a>
+			</div>
+			
+		</div>
+	</body>
+	
+</html>
+<script>
+			$(".rechargenum .style").click(function(){
+				$(".rechargenum .style").removeClass("active");
+				$(this).addClass("active")
+			})
+		
+			$(window).ready(function(){
+				changerem()
+			})
+			changerem()
+			$(window).resize(function(){
+				changerem()
+			})
+		
+		
+		
+		</script>

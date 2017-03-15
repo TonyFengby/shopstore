@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=2.0,maximum-scale=1">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../css/style.css">
+		<script src="../../js/jquery-3.1.1.js"></script>
+		<script src="../../js/jquery.touchSwipe.min.js"></script>
+		<script src="../../js/js.js"></script>
+		<script src="../../js/vue.js"></script> 
+	</head>
+	<body>
+		
+		<div class="index">
+			<div class="nav-topbox">
+				<div class="nav-top">
+					<a href="#"><img src="../../img/help-1.png"  class="left" style="width:0.55rem ;height: 0.95rem;"></a>
+					<p>我的积分</p>
+					
+				</div>
+			</div>
+			<div class="mypoints mypointsexplain">
+				
+				<div class="bottom">
+					<div class="style">
+						<div class="title">用户行为</div>
+						<div class="point">积分变化</div>
+					</div>
+					<div v-for="arrs in arr" class="style">
+						<div class="title">{{arrs.title}}</div>
+						<div class="point colorred">{{arrs.point}}</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</body>
+	
+</html>
+<script>
+	
+			
+			var vm=new Vue({
+		el:".index",
+		data:{
+			arr:[
+			{time:"2016-07-15",title:"购买商品100元",point:"+100"},
+			{time:"2016-07-15",title:"购买商品100元",point:"+100"},
+			{time:"2016-07-15",title:"购买商品100元",point:"+100"},
+			]
+		}
+		})
+
+		
+			
+			$(window).ready(function(){
+				changerem()
+			})
+			changerem()
+			$(window).resize(function(){
+				changerem()
+			})
+		
+		
+		
+		</script>

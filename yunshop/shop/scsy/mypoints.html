@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>我的积分</title>
+		<meta name="viewport" content="width=device-width,initial-scale=2.0,maximum-scale=1">
+		<script src="../../js/jquery-3.1.1.min.js"></script>
+		<script type="text/javascript" src="../../js/base.js"></script>
+		<script type="text/javascript" src="../../js/vue.js"></script>
+		<link rel="stylesheet" type="text/css" href="../../css/style.css" />
+		 <link rel="stylesheet" type="text/css" href="../../css/other.css"/>
+	</head>
+
+	<body>
+		<div class="index personalcenterbox">
+			<!--<div class="nav-topbox">
+				<div class="nav-top">
+				
+					<span class="logo logo-jf">我的积分</span>
+					<a href="#" class="nav-aa"><img src="../../img/icon-11.png" class="logo-img" /></a>
+				</div>
+			</div>-->
+			
+			
+			
+			<div class="nav-topbox">
+				<div class="nav-top">
+					<a href="#">
+						<div class="msgright msg">
+							<img src="../../img/icon-11.png" style="width: 0.875rem;height: 0.6rem;"class="logo-img">
+							
+						</div>
+					</a>
+					<p>我的积分</p>
+				</div>
+			</div>
+
+
+			<div class="user">
+				<span class="user-name">亲爱的日不落</span>
+				<span class="user-jf">积分</span>
+				<span class="user-sz">2000</span>
+				<span class="user-con">兑换记录</span>
+				<img src="../../img/icon-2.png" />
+			</div>
+
+			<div class="index-banner">
+				<div class="bannerin">
+					<ul>
+						<li style="background: url('../../img/img-banner.png') center">
+						</li>
+						<li style="background: url('../../img/img-banner.png') center ">
+						</li>
+						<li style="background: url( '../../img/img-banner.png') center">
+						</li>
+						<li style="background: url('../../img/img-banner.png') center">
+						</li>
+						<li style="background: url( '../../img/img-banner.png') center">
+						</li>
+					</ul>
+				</div>
+				<div class="control">
+					<div class="controlbox">
+						<div class="active"></div>
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="goods">
+
+				<div class="dd">
+					<div class="goods-info">
+						<img src="../../img/img-1.png" />
+						<h2>iPad Pro 12.9英寸  32G WIFI版</h2>
+						<p><span class="goods-span">5000</span>积分</p>
+						<a href="#"><span class="ljqg">立即抢购</span></a>
+					</div>
+
+					<div class="goods-info haha">
+						<img src="../../img/img-2.png" />
+						<h2>iPad Pro 12.9英寸  32G WIFI版</h2>
+						<p><span class="goods-span">5000</span>积分</p>
+						<a href="#"><span class="ljqg">立即抢购</span></a>
+
+					</div>
+				</div>
+				<div class="dd">
+					<div class="goods-info">
+						<img src="../../img/img-1.png" />
+						<h2>iPad Pro 12.9英寸  32G WIFI版</h2>
+						<p><span class="goods-span">5000</span>积分</p>
+						<a href="#"><span class="ljqg">立即抢购</span></a>
+
+					</div>
+					<div class="goods-info haha">
+						<img src="../../img/img-2.png" />
+						<h2>iPad Pro 12.9英寸  32G WIFI版</h2>
+						<p><span class="goods-span">5000</span>积分</p>
+						<a href="#"><span class="ljqg">立即抢购</span></a>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="kuang">
+				<div class="jfsx">
+				<div class="gg">
+					<div class="select">
+						<span class="cansel">取消</span>
+						<span class="be-sure">确定</span>
+					</div>
+					<div class="sel-jf">
+						<p class="jj">积分筛选</p>
+						<p class="jf-cont moren">1000-4999</p>
+						<p class="jf-cont">5000-9999</p>
+						<p class="jf-cont">10000-49999</p>
+						<p class="jf-cont">50000-99999</p>
+						<p class="jf-cont">10万以上</p>
+					</div>
+				</div>
+			</div>
+			</div>
+
+			<div class="main-box"></div>
+		</div>
+
+		<script type="text/javascript" src="../../js/banner.js"></script>
+
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$(".jf-cont").click(function() {
+					$(this).addClass("moren").siblings().removeClass("moren")
+				})
+
+				$(".logo-img").click(function() {
+					$(".jfsx").slideDown();
+					$(".main-box").show()
+				})
+				$(".cansel").click(function() {
+						$(".jfsx").slideUp();
+						$(".main-box").hide()
+					})
+					//				$(".be-sure").click(function(){
+					//					$(".jfsx").slideUp();
+					//					$(".main-box").hide()
+					//				})
+			})
+		</script>
+	</body>
+
+</html>

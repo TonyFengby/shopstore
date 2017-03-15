@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=2.0,maximum-scale=1">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../css/style.css">
+		<script src="../../js/jquery-3.1.1.js"></script>
+		<script src="../../js/jquery.touchSwipe.min.js"></script>
+		<script src="../../js/js.js"></script>
+		<script src="../../js/vue.js"></script>
+	</head>
+	<body>
+		
+		<div class="index commissiondetailsbox">
+			<div class="nav-topbox">
+				<div class="nav-top">
+					<a onclick="window.history.back(-1)"><img src="../../img/help-1.png"  class="left" style="width:0.55rem ;height: 0.95rem;"></a>
+					<p>物流信息</p>
+				</div>
+			</div>
+			<div class="commissiondetails withdrawalsdetails logisticsinformation">
+				<div class="listmain2" v-if="arr">
+					<div class="listmainin">
+						<p>发货时间:<span class="colorgray">{{arr.time}}</span></p>
+						<p>物流公司:<span class="colorgray">{{arr.company}}</span></p>
+						<p>快递单号:<span class="colorgray">{{arr.num}}</span></p>
+					</div>
+					<div class="clearboth"></div>
+				</div>
+				<div class="listmain2" v-if="!arr">
+					<p>暂无提现信息</p>
+				</div>
+			</div>
+			
+		</div>
+	</body>
+	
+</html>
+<script>
+			var vm=new Vue({
+		el:".index",
+		data:{
+			arr:{time:"2016-07-15",company:"顺丰快递",num:"121251251215"}
+			
+		}
+		})
+			
+			movelist()
+		
+			$(window).ready(function(){
+				changerem()
+			})
+			changerem()
+			$(window).resize(function(){
+				changerem()
+			})
+		
+		
+		
+		</script>

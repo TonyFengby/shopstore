@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>个人设置</title>
+		<meta name="viewport" content="width=device-width,initial-scale=2.0,maximum-scale=1">
+		<script src="../../js/jquery-3.1.1.min.js"></script>
+		<script type="text/javascript" src="../../js/base.js"></script>
+	    <link rel="stylesheet" type="text/css" href="../../css/other.css"/>	
+	    <link rel="stylesheet" type="text/css" href="../../css/style.css"/>
+	</head>
+
+	<body>
+		<div class="index personalcenterbox">
+			<!--<div class="nav-topbox">
+				<div class="nav-top">
+					<a href="#" class="nav-a"><img src="../img/icon-1.png" class="left"></a>
+					<span class="logo">地址管理</span>
+					<a href="#" class="nav-img"><img src="../img/icno-13.png" class="right" /></a>
+				</div>
+			</div>-->
+
+			<div class="nav-topbox">
+				<div class="nav-top">
+					<a href="add-address.html">
+						<div class="msgright">
+							<img src="../img/icno-13.png" style="width: 1.2rem;height: 1.2rem;">
+						</div>
+					</a>
+					<a href="commissiondetails.html"><img src="../../img/icon-1.png" class="left" style="width:0.55rem ;height: 0.95rem;"></a>
+					<p>个人设置</p>
+
+				</div>
+			</div>
+
+			<div class="address-info">
+				<div class="add-all add-no">
+					<div class="add-top">
+						<h3>姚明明</h3>
+						<span class="add-tel">15336858888</span>
+
+						<div class="add-bottom">
+							<img src="../../img/icon-15.png" alt="" />
+							<p>浙江省杭州市拱墅区东新路好佳里101号 </p>
+						</div>
+
+					</div>
+
+					<div class="mr-add">
+						<div class="mr-wz">
+							<img src="../../img/icon-14.png" alt="" class="mr-img" />
+							<span class="mrdz">默认地址</span>
+						</div>
+						<div class="del">
+							<img src="../../img/icon-16.png" alt="" />
+							<span>删除</span>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="mr-kb"></div>
+
+				<div class="add-all">
+					<div class="add-top">
+						<h3>姚明明</h3>
+						<span class="add-tel">15336858888</span>
+
+						<div class="add-bottom">
+							<img src="../../img/icon-15.png" alt="" />
+							<p>浙江省杭州市拱墅区东新路好佳里101号 </p>
+						</div>
+
+					</div>
+
+					<div class="mr-add">
+						<div class="mr-wz">
+							<img src="../../img/icon-17.png" alt="" class="mr-img" />
+							<span class="mrdz">默认地址</span>
+						</div>
+						<div class="del">
+							<img src="../../img/icon-16.png" alt="" />
+							<span>删除</span>
+						</div>
+					</div>
+
+				</div>
+				<div class="mr-kb"></div>
+
+				<div class="add-all">
+					<div class="add-top">
+						<h3>姚明明</h3>
+						<span class="add-tel">15336858888</span>
+
+						<div class="add-bottom">
+							<img src="../../img/icon-15.png" alt="" />
+							<p>浙江省杭州市拱墅区东新路好佳里101号 </p>
+						</div>
+
+					</div>
+
+					<div class="mr-add">
+						<div class="mr-wz">
+							<img src="../../img/icon-17.png" alt="" class="mr-img" />
+							<span class="mrdz">默认地址</span>
+						</div>
+						<div class="del">
+							<img src="../../img/icon-16.png" alt="" />
+							<span>删除</span>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="dk">
+					<div class="qrsh">
+						<p>确定要删除该地址吗？</p>
+						<div class="sure-cansel">
+							<span class="qr">确认</span>
+							<span class="qx">取消</span>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="main-box"></div>
+		</div>
+
+		<script type="text/javascript">
+			$(document).ready(function() {
+
+				var mrImg = document.getElementsByClassName('mr-img');
+				var l = mrImg.length;
+				for(i = 0; i < l; i++) {
+					$('.mr-img').click(function() {
+						$('.mr-img').attr({
+							src: "../img/icon-17.png"
+						})
+						$(this).attr({
+							src: "../img/icon-14.png"
+						})
+					})
+				}
+
+				var del = document.getElementsByClassName('del');
+				var s = del.length;
+				var a;
+				for(j = 0; j < s; j++) {
+					del[j].a = j;
+					del[j].onclick = function() {
+						a = this.a;
+						$(".dk").fadeIn();
+						$(".main-box").show();
+					}
+				}
+
+				$('.qr').click(function() {
+
+					$(".dk").hide();
+					$(".main-box").hide();
+					$('.add-all').eq(a).remove('.add-all')
+
+					var s = del.length;
+					for(j = 0; j < s; j++) {
+						del[j].a = j;
+						console.log(j)
+					}
+				})
+				
+				$('.qx').click(function(){
+					$(".dk").hide();
+					$(".main-box").hide();
+				})
+
+			})
+		</script>
+	</body>
+
+</html>

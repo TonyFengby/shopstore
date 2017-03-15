@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=2.0,maximum-scale=1">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../css/style.css">
+		<script src="../../js/jquery-3.1.1.js"></script>
+		<script src="../../js/jquery.touchSwipe.min.js"></script>
+		<script src="../../js/js.js"></script>
+	</head>
+	<body>
+		
+		<div class="index">
+			<div class="nav-topbox">
+				<div class="nav-top">
+					<a href="commissiondetails.html"><img src="../../img/help-1.png"  class="left" style="width:0.55rem ;height: 0.95rem;"></a>
+					<p>提现</p>
+					
+					<div class="withdrawalsmsg">
+						<img src="../../img/withdrawals-1.png">
+						<p>提现金额未达到要求，无法提现</p>
+					</div>
+				</div>
+			</div>
+			<form class="withdrawals" action="mywallet.html">
+				<p>提现金额:<span class="colorred">100.00</span></p>
+				<div class="inputgroup"><input placeholder="请输入支付宝账号:" type="number"></div>
+				<div class="inputgroup"><input placeholder="请输入提现金额:" class="withdrawalsnum" type="number"><button class="all" type="button">全部提现</button></div>
+				<div class="count">
+					<div class="left">手续费:<span class="colorred">-0.00</span></div>
+					<div class="right">到账金额:<span class="colorred">0.00</span></div>
+				</div>
+				<div class="inputgroup"><input placeholder="请输入手机号码:" type="number"></div>
+				<div class="inputgroup code"><input value=""><button class="getcode">获取验证码</button></div>
+				<h5>校验成功后该手机号码将自动绑定到禾米寻宝平台</h5>
+				<button class="post" type="submit"> 提交申请</button>
+				<h5>友情提示</h5>
+				<h5>1.单笔提现金额不低于100元，提现申请后不可撤回</h5>
+				<h5>2.每提现一笔收取6‰手续费</h5>
+				<h5>3.提现申请成功后需工作人员审核通过方可提现成功</h5>
+				<h5>4.提现申请成功被处理后，资金将于3个工作日内到达您的账户</h5>
+				<h5>5.若手机号码已更换，请联系客服中心0571-28826500</h5>
+			</form>
+			
+		</div>
+	</body>
+	
+</html>
+<script>
+
+			$(".withdrawals").submit(function(){
+				var num=$(".withdrawalsnum").val();
+				var num2=parseInt($(".withdrawals>p>.colorred").text());
+				if(num>num2){
+					$(".withdrawalsmsg img").attr("src","../../img/withdrawals-2.png");
+					$(".withdrawalsmsg p").text("提现金额未达到要求，无法提现")
+					$(".withdrawalsmsg").css({"height":"6rem","opacity":1}).delay(1000).animate({"opacity":"0","height":"0"},1000);
+					return false
+				}else{
+					$(".withdrawalsmsg img").attr("src","../../img/withdrawals-1.png");
+					$(".withdrawalsmsg p").text("提现成功")
+					$(".withdrawalsmsg").css({"height":"6rem","opacity":1}).delay(1000).animate({"opacity":"0","height":"0"},1000);
+					setTimeout(function(){return true},1000 );
+					return false
+				}
+			})
+
+
+			$(".withdrawals .all").click(function(){
+				$(".withdrawalsnum").val($(".withdrawals>p>span").text());
+				var num=$(".withdrawalsnum").val();
+				$(".count .left .colorred").text(Math.floor(num*0.006 * 100) / 100);
+				$(".count .right .colorred").text(Math.floor(num*0.994 * 100) / 100); 
+			})
+			$(".withdrawalsnum").on('input',function(e){  
+			   var num=$(".withdrawalsnum").val();
+				$(".count .left .colorred").text(Math.floor(num*0.006 * 100) / 100);
+				$(".count .right .colorred").text(Math.floor(num*0.994 * 100) / 100 );
+			});  
+			
+			$(window).ready(function(){
+				changerem()
+			})
+			changerem()
+			$(window).resize(function(){
+				changerem()
+			})
+		
+		
+		
+		</script>

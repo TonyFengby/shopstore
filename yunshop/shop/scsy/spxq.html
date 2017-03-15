@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>商品详情</title>	
+		<meta name="viewport" content="width=device-width,initial-scale=2.0,maximum-scale=1">
+		<script src="../../js/jquery-3.1.1.min.js"></script>
+		<script type="text/javascript" src="../../js/base.js"></script>
+	    <link rel="stylesheet" type="text/css" href="../../css/other.css"/>
+	     <link rel="stylesheet" type="text/css" href="../../css/style.css"/>
+	</head>
+	<body>
+		<div class="index container">
+			<!--<div class="nav-topbox">
+				<div class="nav-top">
+					<a href="#" class="nav-a"><img src="../../img/icon-1.png"  class="left"></a>
+					<span class="logo">商品详情</span>		
+				</div>
+			</div>-->
+			
+			<div class="nav-topbox">
+				<div class="nav-top">
+					<a href="commissiondetails.html"><img src="../../img/icon-1.png"  class="left" style="width:0.55rem ;height: 0.95rem;"></a>
+					<p>商品详情</p>
+				</div>
+			</div>
+			
+			
+			<div class="index-banner banner-img">
+				<div class="bannerin">
+					<ul>
+						<li style="background: url('../../img/img-xq.png') left">
+						</li>
+						<li style="background: url('../../img/img-xq.png') left ">
+						</li>
+						<li style="background: url( '../../img/img-xq.png') left">
+						</li>
+						<li style="background: url('../../img/img-xq.png') left">
+						</li>
+						<li style="background: url( '../../img/img-xq.png') left">
+						</li>
+					</ul>
+				</div>
+				<div class="control">
+					<div class="controlbox">
+						<div class="active"></div>
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
+				</div>
+			</div>
+			
+			
+			<div class="sp-info">
+				<h3>iMac一体机 mk82ch/a 27英寸</h3>
+				<p><span class="sp-sz">2万</span>积分</p>
+				<span class="sp-jg"><s>￥7500</s></span>
+				<span class="yf-by">运费：包邮</span>
+			</div>
+			
+			<div class="sp-js">
+				<h2>商品介绍</h2>
+				<img src="../../img/img-js.png" alt="" />
+			</div>
+			
+			
+			<div class="bottom"> 
+				<div class="bottom-jf">
+					<div class="sl-btn">
+						<span class="btn-jian">-</span>
+						<input type="text" name="" id="" value="0" class="numb"/>
+						<span class="btn-jia">+</span>
+					</div>
+					
+					<div class="sxjf">
+						<span class="need-jf">所需积分：</span>
+						<p class="fenshu"><span class="dhjf">0</span>万分</p>
+					</div>
+					
+					<div class="ljdh">
+						<a href="#">立即兑换</a>
+					</div>
+													
+				</div>
+			</div>
+			
+			<div class="fk">
+				<div class="no-enough">
+				<div class="enough">
+					<img src="../../img/icon-8.png"/>
+					<p>您的积分不足，无法兑换！</p>
+				</div>
+			</div>
+			</div>
+		</div>
+		
+		
+		<script type="text/javascript" src="../../js/banner.js"></script>
+		<script type="text/javascript">			
+				$(document).ready(function(){
+					var num=$(".numb").val();
+					var sum;
+					$(".btn-jia").click(function(){                    
+					num++;
+					sum=num*2;
+					$(".numb").val(num);
+					$(".dhjf").text(sum);
+				})
+				$(".btn-jian").click(function(){					
+					num--;
+					if($(".numb").val()<=0){
+						num=0;
+					}					
+					sum=num*2;
+					$(".numb").val(num);
+					$(".dhjf").text(sum);
+				})
+
+
+
+                    $(".ljdh").click(function(){
+					$(".no-enough").fadeIn();
+					var time = setInterval(function(){
+						$(".no-enough").fadeOut();
+						clearInterval(time)
+					},1000)
+					
+				})
+				})
+		</script>
+	</body>
+</html>

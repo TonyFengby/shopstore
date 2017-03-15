@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=2.0,maximum-scale=1">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script src="js/jquery-3.1.1.js"></script>
+		<script src="js/jquery.touchSwipe.min.js"></script>
+		<script src="js/js.js"></script>
+	</head>
+	<body>
+		
+		<div class="index">
+			<div class="nav-topbox">
+				<div class="nav-top">
+					<a href="#"><img src="img/help-1.png"  class="left" style="width:0.55rem ;height: 0.95rem;"></a>
+					<p>新人帮助</p>
+				</div>
+			</div>
+			<div class="help">
+				<ul>
+					<li>
+						<p>1、怎样参加禾米云购？</p>
+						<div class="hide">
+							<p> 使用禾米科技账号登录，就可以参加禾米云购了。</p>
+							<p> 参加方式：</p>
+							<p> a、选择喜欢的商品，选择要参与的人次并支付；</p>
+							<p> b、每人每次只需花费1元，获得1个幸运账号，然后开始云购。</p>
+							<p>禾米云购就是这么简单！</p>
+						</div>
+					</li>
+					<li>
+						<p>2、禾米云购是如何计算幸运号码的？</p>
+						<div  class="hide">
+							<p> 使用禾米科技账号登录，就可以参加禾米云购了。</p>
+							<p> 参加方式：</p>
+							<p> a、选择喜欢的商品，选择要参与的人次并支付；</p>
+							<p> b、每人每次只需花费1元，获得1个幸运账号，然后开始云购。</p>
+							<p>禾米云购就是这么简单！</p>
+						</div>
+					</li>
+					<li>
+						<p>3、收到的商品可以退换货吗？</p>
+						<div  class="hide">
+							<p> 使用禾米科技账号登录，就可以参加禾米云购了。</p>
+							<p> 参加方式：</p>
+							<p> a、选择喜欢的商品，选择要参与的人次并支付；</p>
+							<p> b、每人每次只需花费1元，获得1个幸运账号，然后开始云购。</p>
+							<p>禾米云购就是这么简单！</p>
+						</div>
+					</li>
+					<li>
+						<p>4、禾米云购到底是不是拿人钱财替人消灾？</p>
+						<div  class="hide">
+							<p> 使用禾米科技账号登录，就可以参加禾米云购了。</p>
+							<p> 参加方式：</p>
+							<p> a、选择喜欢的商品，选择要参与的人次并支付；</p>
+							<p> b、每人每次只需花费1元，获得1个幸运账号，然后开始云购。</p>
+							<p>禾米云购就是这么简单！</p>
+						</div>
+					</li>
+					<li>
+						<p>5、怎样参加禾米云购？</p>
+						<div  class="hide">
+							<p> 使用禾米科技账号登录，就可以参加禾米云购了。</p>
+							<p> 参加方式：</p>
+							<p> a、选择喜欢的商品，选择要参与的人次并支付；</p>
+							<p> b、每人每次只需花费1元，获得1个幸运账号，然后开始云购。</p>
+							<p>禾米云购就是这么简单！</p>
+						</div>
+					</li>
+					<li>
+						<p>6、怎样参加禾米云购？</p>
+						<div  class="hide">
+							<p> 使用禾米科技账号登录，就可以参加禾米云购了。</p>
+							<p> 参加方式：</p>
+							<p> a、选择喜欢的商品，选择要参与的人次并支付；</p>
+							<p> b、每人每次只需花费1元，获得1个幸运账号，然后开始云购。</p>
+							<p>禾米云购就是这么简单！</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+			
+		</div>
+	</body>
+	
+</html>
+<script>
+		
+		
+			$(window).ready(function(){
+				changerem()
+			})
+			changerem()
+			$(window).resize(function(){
+				changerem()
+			})
+		
+		$(".help li").click(function(){
+			if($(this).children(".hide").css("display")!="block"){
+			$(".help li").children(".hide").slideUp()
+			$(this).children(".hide").slideDown()
+			}else{
+			$(this).children(".hide").slideUp()
+		}
+		})
+		
+		</script>

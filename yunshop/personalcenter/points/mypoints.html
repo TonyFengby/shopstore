@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=2.0,maximum-scale=1">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../css/style.css">
+		<script src="../../js/jquery-3.1.1.js"></script>
+		<script src="../../js/jquery.touchSwipe.min.js"></script>
+		<script src="../../js/js.js"></script>
+		<script src="../../js/vue.js"></script> 
+	</head>
+	<body>
+		
+		<div class="index">
+			<div class="nav-topbox">
+				<div class="nav-top">
+					<a href="../centerindex/personalcenter.html"><img src="../../img/help-1.png"  class="left" style="width:0.55rem ;height: 0.95rem;"></a>
+					<p>我的积分</p>
+					<a href="mypointsexplain.html"><div class="right">
+							积分说明
+					</div></a>
+				</div>
+			</div>
+			<div class="mypoints">
+				<div class="top">
+					<p>积分</p>
+					<h1 class="colorblue">688</h1>
+					<a href="../../shop/scsy/jfsc.html"><div class="colorblue"><img src="../../img/mypoints-1.png" class="fullleft"><img src="../../img/mypoints-2.png" class="fullright">
+					积分可用于兑换商品，去积分商城转转</div></a>
+					<a href="../../shop/dhjl/convert1.html"><button>
+						兑换记录
+					</button></a>
+				</div>
+				<div class="bottom">
+					<p>积分记录</p>
+					<div v-for="arrs in arr" class="style">
+						<div class="time">{{arrs.time}}</div>
+						<div class="title">{{arrs.title}}</div>
+						<div class="point colorred">{{arrs.point}}</div>
+					</div>
+				</div>
+				<p class="last">没有更多数据了</p>
+			</div>
+			
+		</div>
+	</body>
+	
+</html>
+<script>
+	
+			
+			var vm=new Vue({
+		el:".index",
+		data:{
+			arr:[
+			{time:"2016-07-15",title:"购买商品100元",point:"+100"},
+			{time:"2016-07-15",title:"购买商品100元",point:"+100"},
+			{time:"2016-07-15",title:"购买商品100元",point:"+100"},
+			]
+		}
+		})
+
+		
+			
+			$(window).ready(function(){
+				changerem()
+			})
+			changerem()
+			$(window).resize(function(){
+				changerem()
+			})
+		
+		
+		
+		</script>

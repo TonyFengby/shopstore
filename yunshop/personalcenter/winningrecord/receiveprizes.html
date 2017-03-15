@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=2.0,maximum-scale=1">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../css/style.css">
+		<script src="../../js/jquery-3.1.1.js"></script>
+		<script src="../../js/jquery.touchSwipe.min.js"></script>
+		<script src="../../js/js.js"></script>
+		<script src="../../js/vue.js"></script>
+	</head>
+	<body>
+		
+		<div class="index">
+			<div class="nav-topbox">
+				<div class="nav-top">
+					<a href="#" onclick="window.history.back(-1)"><img src="../../img/help-1.png"  class="left" style="width:0.55rem ;height: 0.95rem;"></a>
+					<p>领取奖品</p>
+				</div>
+			</div>
+			<div class="receiveprizes">
+				<div class="prizesmsg">
+					<img v-bind:src="arr.src">
+					<div class="textmsg">
+						<p>商品名字:<span class="colorblue">{{arr.name}}</span></p>
+						<p>期&nbsp;&nbsp;号:<span class="colorgray">{{arr.num1}}</span></p>
+						<p>幸运号码:<span class="colorred">{{arr.num3}}</span></p>
+						<p>揭晓时间:<span class="colorgray">{{arr.time}}</span></p>
+					</div>
+				</div>
+				<div class="addressmsg">
+					<div class="title">
+						请选择收货地址
+						<img src="../../img/receiveprizes-1.png" class="fullright">
+					</div>
+					<div class="addressstyle" v-for="(addarrs,index) in addarr" v-on:click="click(index)">
+						<p><span>{{addarrs.name}}</span><span  class="fullright">{{addarrs.phone}}</span></p>
+						<p class="colorgray">{{addarrs.state}}{{addarrs.address}}</p>
+					</div>
+				</div>
+				<a href="qrcord.html"><button>
+					确定
+				</button>
+				</a>
+			</div>
+			
+		</div>
+	</body>
+	
+</html>
+<script>
+		
+		
+			var vm=new Vue({
+		el:".index",
+		data:{
+			arr:{src:"../../img/indexlist-1.jpg",name:"Apple iPhone6s 16g",time:"2016-07-15",num1:"121253",num2:"55",num3:"10000852"},
+			addarr:[
+			{name:"王小明",phone:"156446665",address:"浙江省杭州市江干区同心三区8-1",state:"[默认]"},
+			{name:"王小明",phone:"156446665",address:"浙江省杭州市江干区同心三区8-1",state:""},
+			{name:"王小明",phone:"156446665",address:"浙江省杭州市江干区同心三区8-1",state:""}
+			]
+		},
+		methods:{
+			click:function(index){
+				$(".addressstyle").removeClass("active")
+				var addressstyle=document.getElementsByClassName("addressstyle")[index];
+				addressstyle.classList.add("active");
+			}
+		}
+		})
+
+			
+
+
+			movelist()
+		
+			$(window).ready(function(){
+				changerem()
+			})
+			changerem()
+			$(window).resize(function(){
+				changerem()
+			})
+		
+		
+		
+		</script>

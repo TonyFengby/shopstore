@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=2.0,maximum-scale=1">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../css/style.css">
+		<script src="../../js/jquery-3.1.1.js"></script>
+		<script src="../../js/jquery.touchSwipe.min.js"></script>
+		<script src="../../js/js.js"></script>
+		<script src="../../js/vue.js"></script>
+	</head>
+	<body>
+		
+		<div class="index commissiondetailsbox">
+			<div class="nav-topbox">
+				<div class="nav-top">
+					<a href="cloudrecord.html"><img src="../../img/help-1.png"  class="left" style="width:0.55rem ;height: 0.95rem;"></a>
+					<p>云购详情</p>
+				</div>
+			</div>
+			<div class="clouddetail">
+				<div class="top">
+					<div class="name">苹果 Apple iPad Pro 9.7英寸 32GB 颜色随机颜色随机</div>
+					<div>期&nbsp;&nbsp;号:<span class="colorgray">105505</span></div>
+					<div>本期参与:<span class="colorgray"><span class="colorred">105505</span>人次</span></div>
+				</div>
+				<div class="cloudlist">
+					<div class="title">
+						我的所有夺宝号码
+					</div>
+					<div class="liststyle" v-for="arrs in arr">
+						<div class="time colorgray">{{arrs.time}}</div>
+						<div class="list"  v-for="list in arrs.list">{{list}}</div>
+						<div class="clearboth"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	
+</html>
+<script>
+
+			var vm=new Vue({
+		el:".index",
+		data:{
+			arr:[
+			{time:"2016-03-24 13:25:57.99",list:[100024,244244,424124,125125,521513,535515,135136]},
+			{time:"2016-03-24 13:25:57.99",list:[100024,244244,424124,125125,521513,535515,135136]}
+			]
+		}
+		})
+
+
+			movelist()
+		
+			$(window).ready(function(){
+				changerem()
+			})
+			changerem()
+			$(window).resize(function(){
+				changerem()
+			})
+		
+		
+		
+		</script>

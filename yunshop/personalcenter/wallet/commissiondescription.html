@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=2.0,maximum-scale=1">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../css/style.css">
+		<script src="../../js/jquery-3.1.1.js"></script>
+		<script src="../../js/jquery.touchSwipe.min.js"></script>
+		<script src="../../js/js.js"></script>
+	</head>
+	<body>
+		
+		<div class="index">
+			<div class="nav-topbox">
+				<div class="nav-top">
+					<a href="commissiondetails.html"><img src="../../img/help-1.png"  class="left" style="width:0.55rem ;height: 0.95rem;"></a>
+					<p>佣金说明</p>
+					
+				</div>
+			</div>
+			<div class="commissiondescription">
+				<div class="text">
+					<p class="title">
+						佣金返利说明
+					</p>
+					<div class="mian">
+						用户A分享链接至各个社交平台，用户B通过用户A的链接下载<span class="colorred">好佳云购</span>，并产生消费记录，则用户A在<span class="colorblue">一年内</span>将获得B在<span class="colorred">好佳云购</span>消费总金额的10%的佣金。
+					</div>
+					<div class="mian">
+						 <p>（1） 佣金将自动计算到<span class="colorred">云购</span>余额中；</p>
+						 <p>（2） 佣金不封顶；</p>
+						 <p>（3） 佣金满<span class="colorblue">100</span>元起可提现；</p>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</body>
+	
+</html>
+<script>
+
+			$(".withdrawals").submit(function(){
+				var num=$(".withdrawalsnum").val();
+				var num2=parseInt($(".withdrawals>p>.colorred").text());
+				if(num>num2){
+					$(".withdrawalsmsg img").attr("src","../../img/withdrawals-2.png");
+					$(".withdrawalsmsg p").text("提现金额未达到要求，无法提现")
+					$(".withdrawalsmsg").css({"height":"6rem","opacity":1}).delay(1000).animate({"opacity":"0","height":"0"},1000);
+					return false
+				}else{
+					$(".withdrawalsmsg img").attr("src","../../img/withdrawals-1.png");
+					$(".withdrawalsmsg p").text("提现成功")
+					$(".withdrawalsmsg").css({"height":"6rem","opacity":1}).delay(1000).animate({"opacity":"0","height":"0"},1000);
+					setTimeout(function(){return true},1000 );
+					return false
+				}
+			})
+
+
+			$(".withdrawals .all").click(function(){
+				$(".withdrawalsnum").val($(".withdrawals>p>span").text());
+				var num=$(".withdrawalsnum").val();
+				$(".count .left .colorred").text(Math.floor(num*0.006 * 100) / 100);
+				$(".count .right .colorred").text(Math.floor(num*0.994 * 100) / 100); 
+			})
+			$(".withdrawalsnum").on('input',function(e){  
+			   var num=$(".withdrawalsnum").val();
+				$(".count .left .colorred").text(Math.floor(num*0.006 * 100) / 100);
+				$(".count .right .colorred").text(Math.floor(num*0.994 * 100) / 100 );
+			});  
+			
+			$(window).ready(function(){
+				changerem()
+			})
+			changerem()
+			$(window).resize(function(){
+				changerem()
+			})
+		
+		
+		
+		</script>

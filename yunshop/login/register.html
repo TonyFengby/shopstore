@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<script src="../js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/js.js" type="text/javascript" charset="utf-8"></script>
+
+		<body>
+			<div class="index_s">
+				<div class="index_context">
+					<a href="sign in.html"><img src="../img/left.png" /></a>注册
+				</div>
+			</div>
+
+			<div class="sign_content">
+				<div class="useript_box">手机号：<input type="text" name="" class="user_name" value="" /></div>
+				<div class="pswdipt_box">验证码：<input type="text" name="" class="passwordCon" value="" /><input type="button" name="" class="Verification" value="获取验证码" /></div>
+				<div class="pswdipt_box">密 &nbsp; 码：<input type="text" name="" class="Confirm" value="" /></div>
+				<div class="pswdipt_box">邀请码：<input type="text" name="" class="Confirm" value="" />
+					<a href="">
+						<div class="scanning"><img src="../img/sing.png" class="scimg"></div>
+					</a>
+				</div>
+				<input type="button" name="" class="signin_ipt" value="注册" / style="margin-left: 0.75rem;">
+				<span id="Agreement">
+	   	 	登录或注册即同意《 <a href="">禾米寻宝服务协议</a>》
+	   	 </span>
+
+				<div id="disapper" style="width: 10rem;height: 2rem;position: fixed;left: 3rem;top: 30%;background: rgba(51,51,51,0.8);color: #fff;font-size: 0.6rem;text-align: center;line-height: 2rem;display: none;">
+
+				</div>
+			</div>
+		</body>
+
+</html>
+<script type="text/javascript">
+	var apiurl = 'http://120.55.86.40:82/yiyuanapi/';
+	var Verification = document.getElementsByClassName('Verification')[0];
+	var phoNum, passWord, passwordCon;
+	var user = document.getElementsByClassName('user_name')[0];
+
+	Verification.onclick = function() {
+		phoNum = $('.user_name').val();
+
+		$.ajax({
+			type: "post",
+			url: apiurl + "member/sendCaptcha",
+			data: {
+				mobile: phoNum,
+				type: 1
+			},
+			success: function(data) {
+				console.log(data)
+
+				if(data.code==-1) {
+
+					$("#disapper").fadeIn().text(data.msg)
+					setTimeout(function() {
+						$("#disapper").fadeOut()
+					}, 1000)
+
+				}
+
+			}
+		});
+		//  	console.log(phoNum)
+	}
+
+	var signinIpt = document.getElementsByClassName('signin_ipt')[0];
+	signinIpt.onclick = function() {
+		passwordCon = $('passwordCon').val();
+		passWord = $('.Confirm').val();
+		$.ajax({
+			type: 'post',
+			datatype: 'json',
+			url: apiurl + 'member/register',
+			data: {
+				mobile: phoNum,
+				password: passWord,
+				//				invite:'邀请码',
+				captcha: 666666
+			},
+			success: function(data) {
+
+				if(data.code == -1) {
+
+					$("#disapper").fadeIn().text(data.msg)
+					setTimeout(function() {
+						$("#disapper").fadeOut()
+					}, 1000)
+
+				}
+
+				if(passWord.length < 6 || passWord.length > 16) {
+					$("#disapper").fadeIn().text("密码长度不能小于6或大于16")
+					setTimeout(function() {
+						$("#disapper").fadeOut()
+					}, 1000)
+				}
+
+				console.log(data)
+
+				if(data.code == 1) {
+					window.location.href = 'sign in.html'
+				}
+			}
+
+			//					console.log(phoNum + "aa" + passWord)
+
+			//				if(data.code==1){
+			//					 window.location.href='sign in.html'
+			//				}
+
+		})
+	}
+</script>

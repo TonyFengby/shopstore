@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>兑换记录</title>
+		<meta name="viewport" content="width=device-width,initial-scale=2.0,maximum-scale=1">
+		<script src="../../js/jquery-3.1.1.min.js"></script>
+		<script type="text/javascript" src="../../js/base.js"></script>
+		<script type="text/javascript" src="../../js/vue.js"></script>
+	    <link rel="stylesheet" type="text/css" href="../../css/style.css"/>
+	    <link rel="stylesheet" type="text/css" href="../../css/other.css"/>
+	</head>
+	<body>
+		<div class="index">
+			<!--<div class="nav-topbox">
+				<div class="nav-top">
+					<a href="#" class="nav-a"><img src="../../img/icon-1.png"  class="left"></a>
+					<span class="logo">兑换记录</span>		
+				</div>
+			</div>-->
+			
+			
+			<div class="nav-topbox">
+				<div class="nav-top">
+					<a href="commissiondetails.html"><img src="../../img/icon-1.png"  class="left" style="width:0.55rem ;height: 0.95rem;"></a>
+					<p>兑换记录</p>
+				</div>
+			</div>
+			
+			
+			<div class="classify">
+				<div class="cla-rec">
+					<span class="quanbu">全部</span>
+					<span class="dfh act">待发货</span>
+					<span class="dsh">待收货</span>
+					<span class="ywc">已完成</span>
+				</div>
+				<div class="jx">
+					<span></span>
+					<span class="jx-span"></span>
+					<span></span>
+					<span></span>
+				</div>
+			</div>
+			
+			
+			<div class="wdt">
+				<div class="no-rec">
+					<img src="../../img/icon-9.png" alt="" />
+					<p>暂无相关记录哦~</p>
+					
+					<div class="to-cla">
+						<a href="#">去兑换</a>
+				    </div>
+			    </div>
+			    
+			</div>
+			
+			
+		</div>
+		
+		
+		<script type="text/javascript">
+			$(document).ready(function(){
+			   	$(".cla-rec span").click(function(){
+			   		$(this).addClass("act").siblings().removeClass("act")
+			   		$(".jx span").eq($(this).index()).addClass("jx-span").siblings().removeClass("jx-span")
+			   	})
+			})
+		</script>
+	</body>
+</html>

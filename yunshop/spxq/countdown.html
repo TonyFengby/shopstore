@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>即将揭晓</title>	
+		<meta name="viewport" content="width=device-width,initial-scale=2.0,maximum-scale=1">
+		<script src="../js/jquery-3.1.1.min.js"></script>		
+	    <link rel="stylesheet" type="text/css" href="../css/other.css"/>
+	    <script type="text/javascript" src="../js/base.js"></script>
+ <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+	</head>
+	
+	<body>
+		<div class="index container">
+			<!--<div class="nav-topbox">
+				<div class="nav-top">
+					<a href="#" class="nav-a"><img src="../img/icon-1.png"  class="left"></a>
+					<span class="logo">商品详情</span>		
+				</div>
+			</div>-->
+			
+			<div class="nav-topbox">
+				<div class="nav-top">
+					<a href="commissiondetails.html"><img src="../img/icon-1.png"  class="left" style="width:0.55rem ;height: 0.95rem;"></a>
+					<p>商品详情</p>
+				</div>
+			</div>
+			
+			<div class="carousel">
+				<div class="carousel-img">
+					<img src="../img/img_carousel.png"/>
+					<ul class="carousel-ul">
+						<li class="carousel-li"><a href="" class="active"></a></li>
+						<li class="carousel-li"><a href=""></a></li>
+						<li class="carousel-li"><a href=""></a></li>
+						<li class="carousel-li"><a href=""></a></li>
+					</ul>
+					
+					<div class="carousel-cont">
+						<span class="cont-span-down">倒计时</span>
+						<p>Apple iPhone6s Plus 64G 颜色随机  唯一的 不同就是处处不同</p>
+					</div>
+				</div>
+			</div>
+			
+		
+			<div class="soon-announce">
+				<div class="soon-time">
+					<div class="soon-img">
+						<img src="../img/icon-3.png" alt="" />
+						<span>即将揭晓</span>
+					</div>
+					 <div class="time-span">
+					 	<span id="_s">00</span><span class="a">:</span>
+	                     <span id="_m">00</span><span class="a">:</span>
+	                     <span id="_h">00</span> 
+					 </div>
+				</div>
+				<div class="qihao">
+					<span>期号:303291670</span>
+				</div>
+			</div>
+			
+			<div class="introduce">
+				<div class="int-p intro">
+					<p>商品介绍</p>
+				    <a href="#"><img src="../img/icon-2.png" alt="" />  </a> 
+				</div>
+			</div>
+			<div class="announce">
+				<div class="int-p">
+					<p>往期揭晓</p>
+				    <a href="wqjx.html"><img src="../img/icon-2.png" alt="" />   </a>
+				</div>
+			</div>
+			
+			<div class="record">
+				<div class="record-p">
+					<p>参与记录</p>
+				</div>
+				<div class="record-dream">
+					<div class="dream">
+						<p class="dream-pp">梦想坚持<span> 浙江省杭州市 IP：117.136.61.52 </span></p>
+						<p class="peo-count">参与了10人次    <span>2016-03-24 11:20:41.899</span> </p>
+					</div>
+					<div class="dream">
+						<p class="dream-pp">梦想坚持<span> 浙江省杭州市 IP：117.136.61.52 </span></p>
+						<p class="peo-count">参与了10人次    <span>2016-03-24 11:20:41.899</span> </p>
+					</div>
+					<div class="dream">
+						<p class="dream-pp">梦想坚持<span> 浙江省杭州市 IP：117.136.61.52 </span></p>
+						<p class="peo-count">参与了10人次    <span>2016-03-24 11:20:41.899</span> </p>
+					</div>
+					<div class="dream">
+						<p class="dream-pp">梦想坚持<span> 浙江省杭州市 IP：117.136.61.52 </span></p>
+						<p class="peo-count">参与了10人次    <span>2016-03-24 11:20:41.899</span> </p>
+					</div>
+				</div>
+			</div>
+			
+			<div class="footer">
+				<div class="footer-bottom">
+					<span class="ing">新一期正在火热进行中...</span>
+				<a href="#"><span class="footer-join-two">立即参与</span></a>
+				</div>
+			</div>
+
+		</div>
+		
+		
+		   <script type="text/javascript">  
+    window.onload=function countTime() {  
+            //获取当前时间  
+            var date = new Date();  
+            var now = date.getTime();  
+            //设置截止时间  
+            var endDate = new Date("2017-10-22 23:23:23");  
+            var end = endDate.getTime();  
+            //时间差  
+            var leftTime = end-now;  
+            //定义变量 d,h,m,s保存倒计时的时间  
+            var d,h,m,s;  
+            if (leftTime>=0) {   
+                h = Math.floor(leftTime/1000/60/60%24);  
+                m = Math.floor(leftTime/1000/60%60);  
+                s = Math.floor(leftTime/1000%60);                     
+            }  
+            //将倒计时赋值到div中  
+            if(h>=0 && h<=9){
+            	document.getElementById("_h").innerHTML = "0"+h;
+            }
+            else{
+                document.getElementById("_h").innerHTML = h; 
+   			}
+            if(m>=0 && m<=9){
+            	document.getElementById("_m").innerHTML = "0"+m;
+            }
+            else{
+                document.getElementById("_m").innerHTML = m; 
+   			}
+   			if (s>=0 && s<=9) {
+                document.getElementById("_s").innerHTML = "0"+s; 
+            }
+   			else{
+                document.getElementById("_s").innerHTML = s; 
+   			}
+             
+            //  递归每秒调用countTime方法，显示动态时间效果  
+            setTimeout(countTime,1000);  
+  
+        }  
+    </script>
+	</body>
+</html>

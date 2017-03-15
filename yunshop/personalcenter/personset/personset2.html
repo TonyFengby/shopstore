@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>个人设置</title>
+		<meta name="viewport" content="width=device-width,initial-scale=2.0,maximum-scale=1">
+		<script src="../../js/jquery-3.1.1.min.js"></script>
+		<script type="text/javascript" src="../../js/base.js"></script>
+	    <link rel="stylesheet" type="text/css" href="../../css/other.css"/>
+	    <link rel="stylesheet" type="text/css" href="../../css/style.css"/>
+	</head>
+
+	<body>
+		<div class="index">
+			<!--<div class="nav-topbox">
+				<div class="nav-top">
+					<a href="#" class="nav-a"><img src="../img/icon-1.png"  class="left"></a>
+					<span class="logo">个人设置</span>		
+				</div>
+			</div>-->
+
+			<div class="nav-topbox">
+				<div class="nav-top">
+					<a href="commissiondetails.html"><img src="../../img/icon-1.png" class="left" style="width:0.55rem ;height: 0.95rem;"></a>
+					<p>个人设置</p>
+				</div>
+			</div>
+
+			<div class="set-info">
+				<div class="info-top">
+					<div class="info-tx">
+						<span>头像</span>
+						<img src="../../img/img-touxiang2.png" alt="" class="info-img" />
+						<a href="#"><img src="../../img/icon-2.png" alt="" class="info-tz" /></a>
+					</div>
+					<div class="info-user">
+						<span class="info-id">用户ID</span>
+						<span class="id">100598</span>
+					</div>
+				</div>
+
+				<div class="nk">
+					<div class="nickn">
+						<span class="nickname">昵称</span>
+						<span class="u-name">心碎乌托邦</span>
+						<a href="#"><img src="../../img/icon-2.png" /></a>
+					</div>
+
+					<div class="tel">
+						<span class="telphone">手机</span>
+						<input type="text" name="" id="" value="" placeholder="请填写绑定手机号码" class="bd-tel"/>
+						<!--<span class="bd-tel"></span>-->
+					</div>
+				</div>
+
+				<div class="change-dz">
+					<div class="dzgl">
+						<span>地址管理</span>
+						<a href="personset1.html"><img src="../../img/icon-2.png" /></a>
+					</div>
+
+					<div class="xgmm">
+						<span>修改密码</span>
+						<a href="#"><img src="../../img/icon-2.png" /></a>
+					</div>
+				</div>
+
+				<div class="exit-login">
+					<a href="#">退出登录</a>
+				</div>
+
+				
+
+			</div>
+			
+			<div class="fk">
+				<div class="no-enough">
+					<div class="enough">
+						<img src="../../img/icon-8.png" />
+						<p>暂不支持手机号码修改</p>
+					</div>
+				</div>
+			</div>
+			
+			
+			<div class="dk">
+				<div class="success">
+					<div class="success-a">
+						<img src="../../img/icon-18.png"/>
+						<p>手机号码绑定成功</p>
+					</div>
+			    </div>
+			</div>
+			
+		</div>
+		
+		<script type="text/javascript">
+		
+		var bdtel = document.getElementsByClassName("bd-tel")[0];
+		
+		var dk = document.getElementsByClassName("dk")[0];
+		
+		var fk = document.getElementsByClassName("fk")[0];
+		bdtel.onblur=function(){
+			var l =bdtel.value.length;
+			if(l==11){
+				dk.style.display="block";
+
+			}
+			
+			setTimeout(function(){
+				dk.style.display="none";
+			},1000)
+		}
+			
+			function ts(){
+				fk.style.display="block";
+			}
+	    bdtel.ondblclick=function(){
+	    	fk.style.display="block";
+	    	setTimeout(function(){
+	    		fk.style.display="none";
+	    	},1000)
+	    }
+		</script>
+	</body>
+
+</html>

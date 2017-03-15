@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=2.0,maximum-scale=1">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../css/style.css">
+		<script src="../../js/jquery-3.1.1.js"></script>
+		<script src="../../js/jquery.touchSwipe.min.js"></script>
+		<script src="../../js/js.js"></script>
+		<script src="../../js/vue.js"></script>
+	</head>
+	<body >
+		<div class="index">
+			<div class="nav-topbox">
+				<div class="nav-top">
+					<a href="#"><img src="../../img/help-1.png"  class="left" style="width:0.55rem ;height: 0.95rem;"></a>
+					<p>关于我们</p>
+				</div>
+			</div>
+			
+			<div class="proposal">
+				<form action="proposalsuccess.html">
+					<div class='proposalmsg'>
+						<div class="msgstyle">
+							<span class="fullleft">回复类型</span>
+							<span class="hiddebtn">
+								<img class="fullright" src="../../img/proposal-1.png">
+								<span class="fullright colorblue text">电话回复</span>
+							</span>
+							<div class="hidde">
+								<div class="hiddestyle colorblue">
+									电话回复
+								</div>
+								<div class="hiddestyle">
+									邮箱回复
+								</div>
+							</div>
+						</div>
+						<div class="msgstyle">
+							<span class="fullleft">输入电话</span>
+							<input class="fullright">
+						</div>
+						<div class="msgstyle">
+							<span class="fullleft">留言主题</span>
+							<span class="hiddebtn">
+								<img class="fullright" src="../../img/proposal-1.png">
+								<span class="fullright colorblue text">功能问题</span>
+							</span>
+							<div class="hidde">
+								<div class="hiddestyle colorblue">
+									功能信息
+								</div>
+								<div class="hiddestyle">
+									购买遇到问题
+								</div>
+								<div class="hiddestyle">
+									性能问题
+								</div>
+								<div class="hiddestyle">
+									其他
+								</div>
+							</div>
+						</div>
+					</div>
+					<textarea class="proposaltext" placeholder="请输入您的建议"></textarea>
+					<button>提交</button>
+				</form>
+				<div class="proposalback">
+				</div>
+			</div>
+		</div>
+	</body>
+	
+</html>
+<script>
+		
+			$(".msgstyle .hiddebtn").click(function(){
+				$(".proposalback").css("display","block")
+				$(this).siblings(".hidde").css("display","block")
+			})
+			$(".msgstyle .hiddestyle").click(function(){
+				$(this).siblings(".hiddestyle").removeClass("colorblue")
+				$(this).addClass("colorblue")
+				$(".proposalback").css("display","none");
+				$(this).parent(".hidde").css("display","none");
+				$(this).parents(".msgstyle").children(".hiddebtn").children(".text").text($(this).text())
+			})
+			
+			
+			
+			$(window).ready(function(){
+				changerem()
+			})
+			changerem()
+			$(window).resize(function(){
+				changerem()
+				
+			})
+		$(".signbtn").click(function(){
+			$(".sign").css("display","block")
+		})
+		$(".sign").click(function(){
+			$(".sign").css("display","none");
+		})
+		
+		
+		
+		</script>
